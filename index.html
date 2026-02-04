@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Radar Share App</title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; font-family: sans-serif; overflow: hidden; }
+        .app-header { background: #00ff41; color: #000; padding: 10px; text-align: center; font-weight: bold; font-size: 14px; }
+        .radar-section { height: 35vh; position: relative; background: radial-gradient(circle, #001a00 0%, #000 80%); display: flex; align-items: center; justify-content: center; border-bottom: 2px solid #00ff41; }
+        .sweep { position: absolute; width: 280px; height: 280px; background: linear-gradient(90deg, rgba(0,255,65,0.3) 0%, transparent 50%); border-radius: 50%; animation: sweep 3s linear infinite; }
+        .engine-section { height: 65vh; background: #fff; }
+        iframe { width: 100%; height: 100%; border: none; }
+        @keyframes sweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="app-header">GHOST RADAR v1.0 - SCANNING WiFi...</div>
+    <div class="radar-section">
+        <div class="sweep"></div>
+        <div style="z-index: 10; color: #00ff41; font-family: monospace; font-size: 10px; text-align: center;">
+            [SEARCHING NODES]<br><span id="node-count">0</span> DEVICE(S) FOUND
+        </div>
+    </div>
+    <div class="engine-section">
+        <iframe src="https://snapdrop.net/"></iframe>
+    </div>
+</body>
+</html>
